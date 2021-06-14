@@ -74,3 +74,31 @@ border-color: #8b005d;
 `;
 
 **--78. Styled Components & Media Queries--**
+use @ symbol
+
+@media (min-width: 768px) {
+width: auto;
+}
+
+**--79. Using CSS Modules--**
+when importing for css modules use--> import styles from './Button.module.css';
+must rename the css file to contain "module'
+look at className in the example. That is how we can add unique properties on the imported styles object.
+
+const Button = (props) => {
+return (
+<button type={props.type} className={styles.button} onClick={props.onClick}>
+{props.children}
+</button>
+);
+};
+
+https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/
+
+**--80. Dynamic Styles with CSS Modules--**
+<CourseInput.js>
+<div
+className={`${styles["form-control"]} ${!isValid && styles.invalid}`} >
+<label>Course Goal</label>
+<input type="text" onChange={goalInputChangeHandler} />
+</div>
